@@ -1,10 +1,3 @@
-/*****
- 
- All the resources for this project:
- https://randomnerdtutorials.com/
- 
-*****/
-
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "DHT.h"
