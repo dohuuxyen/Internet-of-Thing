@@ -1,0 +1,341 @@
+[
+    {
+        "id": "5d0a67cf.fa6378",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "55b4135d.fdab1c",
+        "type": "ui_switch",
+        "z": "5d0a67cf.fa6378",
+        "name": "Đèn Phòng Ngủ",
+        "label": "Đèn Phòng Ngủ",
+        "tooltip": "",
+        "group": "ea9febc9.1e8058",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "room/ledphongngu",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "ffae4140.447f2"
+            ]
+        ]
+    },
+    {
+        "id": "ffae4140.447f2",
+        "type": "mqtt out",
+        "z": "5d0a67cf.fa6378",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "922c45c8.368108",
+        "x": 510,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c1ed6811.333338",
+        "type": "ui_switch",
+        "z": "5d0a67cf.fa6378",
+        "name": "Đèn Phòng Khách",
+        "label": "Đèn Phòng Khách",
+        "tooltip": "",
+        "group": "ea9febc9.1e8058",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "room/ledphongkhach",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "ffae4140.447f2"
+            ]
+        ]
+    },
+    {
+        "id": "20b5df6b.69bf5",
+        "type": "ui_switch",
+        "z": "5d0a67cf.fa6378",
+        "name": "Đèn Phòng Bếp",
+        "label": "Đèn Phòng Bếp",
+        "tooltip": "",
+        "group": "ea9febc9.1e8058",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "room/ledphongbep",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "ffae4140.447f2"
+            ]
+        ]
+    },
+    {
+        "id": "327e26fc.f81a4a",
+        "type": "ui_switch",
+        "z": "5d0a67cf.fa6378",
+        "name": "Đèn Phòng Tắm",
+        "label": "Đèn Phòng Tắm",
+        "tooltip": "",
+        "group": "ea9febc9.1e8058",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "room/ledphongtam",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "ffae4140.447f2"
+            ]
+        ]
+    },
+    {
+        "id": "37f367e.c577d98",
+        "type": "ui_gauge",
+        "z": "5d0a67cf.fa6378",
+        "name": "Gauge",
+        "group": "e7d43a63.2a7368",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Nhiệt Độ",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 412,
+        "y": 359,
+        "wires": []
+    },
+    {
+        "id": "38af9de2.5a1d32",
+        "type": "mqtt in",
+        "z": "5d0a67cf.fa6378",
+        "name": "Nhiệt Độ",
+        "topic": "room/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "922c45c8.368108",
+        "x": 182,
+        "y": 359,
+        "wires": [
+            [
+                "37f367e.c577d98",
+                "e4b18c99.73272"
+            ]
+        ]
+    },
+    {
+        "id": "6d01d19a.b712",
+        "type": "mqtt in",
+        "z": "5d0a67cf.fa6378",
+        "name": "Độ Ẩm",
+        "topic": "room/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "922c45c8.368108",
+        "x": 172,
+        "y": 479,
+        "wires": [
+            [
+                "50da8a0e.ca34b4",
+                "e4b18c99.73272"
+            ]
+        ]
+    },
+    {
+        "id": "50da8a0e.ca34b4",
+        "type": "ui_gauge",
+        "z": "5d0a67cf.fa6378",
+        "name": "Gauge",
+        "group": "e7d43a63.2a7368",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Độ Ẩm",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 412,
+        "y": 479,
+        "wires": []
+    },
+    {
+        "id": "e4b18c99.73272",
+        "type": "ui_chart",
+        "z": "5d0a67cf.fa6378",
+        "name": "Chart",
+        "group": "10be06eb.82ca39",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Đồ Thị",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 412,
+        "y": 419,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea9febc9.1e8058",
+        "type": "ui_group",
+        "z": "",
+        "name": "Điều Khiển Đèn",
+        "tab": "ca586932.9dd408",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "922c45c8.368108",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "mqtt",
+        "broker": "192.168.4.1",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e7d43a63.2a7368",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hiển thị Nhiệt Độ - Độ Ẩm",
+        "tab": "ca586932.9dd408",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "10be06eb.82ca39",
+        "type": "ui_group",
+        "z": "",
+        "name": "Biểu Diễn Đồ Thị ",
+        "tab": "ca586932.9dd408",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ca586932.9dd408",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Room",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
